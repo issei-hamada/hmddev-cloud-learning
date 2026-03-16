@@ -1,0 +1,9 @@
+{
+  "enabledMcpjsonServers": [
+    "aws-knowledge-mcp-server"
+  ],
+  "enableAllProjectMcpServers": true,
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
+}
