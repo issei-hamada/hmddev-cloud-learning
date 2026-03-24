@@ -1,0 +1,15 @@
+{
+  "name": "AWS Learning Progress Saver",
+  "description": "records/.session_state.json が更新されたとき、.claude/hooks/save_progress.sh を実行して progress.json へ進捗をマージする",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "records/.session_state.json"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "records/.session_state.json が更新されました。bash .claude/hooks/save_progress.sh を実行して、セッション状態を records/progress.json へマージしてください。エラーが出た場合はユーザーに報告してください。"
+  }
+}
