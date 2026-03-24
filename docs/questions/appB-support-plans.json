@@ -1,0 +1,219 @@
+{
+  "chapter": "appB",
+  "title": "付録B: サポートプラン",
+  "questions": [
+    {
+      "id": "appB-001",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "AWSアカウントを作成すると自動的に付与されるサポートプランはどれですか？",
+      "choices": {
+        "A": "Basic",
+        "B": "Business",
+        "C": "Developer",
+        "D": "Enterprise On-Ramp"
+      },
+      "answer": "A",
+      "explanation": "AWSアカウントを作成すると、無料のBasicプランが自動的に付与されます。Basicプランでは技術的な問い合わせをAWSの技術者に直接行うことはできませんが、公式ドキュメント・ホワイトペーパー・コミュニティフォーラム（re:Post）などのセルフサービスリソースを利用できます。また、アカウントや請求に関する問い合わせのみ行うことができます。Developer・Business・Enterprise On-Rampは有料プランであり、アカウント作成時に自動的に付与されるものではありません。"
+    },
+    {
+      "id": "appB-002",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "AWS Trusted Advisorのすべてのチェック項目にアクセスするために必要な、最低限のサポートプランはどれですか？",
+      "choices": {
+        "A": "Business",
+        "B": "Basic",
+        "C": "Developer",
+        "D": "Enterprise On-Ramp"
+      },
+      "answer": "A",
+      "explanation": "Trusted Advisorの全項目（コスト最適化・パフォーマンス・セキュリティ・耐障害性・サービスクォータの全カテゴリ）にアクセスできるのはBusinessプラン以上です。BasicプランとDeveloperプランでは、限定されたコアチェック項目（S3バケットのアクセス権限チェック、セキュリティグループの無制限アクセスチェック、MFAの有効化チェックなど）のみ利用可能です。「最低限のプラン」という問いに対しては、EnterpriseよりもBusinessが正解です。試験でよく問われる重要ポイントです。"
+    },
+    {
+      "id": "appB-003",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "TAM（テクニカルアカウントマネージャー）を利用できる最低限のサポートプランはどれですか？",
+      "choices": {
+        "A": "Business",
+        "B": "Developer",
+        "C": "Enterprise On-Ramp",
+        "D": "Enterprise"
+      },
+      "answer": "C",
+      "explanation": "TAM（テクニカルアカウントマネージャー）は、Enterprise On-Ramp以上のプランで利用できます。Enterprise On-Rampでは「プール型（共有型）」TAMが提供され、1人のTAMが複数のお客様を担当します。Enterpriseプランでは専任のTAMが付きます。「最低限」という条件なのでEnterprise On-Rampが正解です。BusinessプランやDeveloperプランにはTAMは含まれません。TAMはお客様のAWS環境を理解した上で、運用の改善やアーキテクチャの見直しを継続的にサポートしてくれる「かかりつけ医」のような存在です。"
+    },
+    {
+      "id": "appB-004",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "ある企業が本番環境のWebアプリケーションをAWSで運用しており、深夜に障害が発生した場合でも24時間365日対応の電話サポートを利用したいと考えています。この要件を満たす最低限のサポートプランはどれですか？",
+      "choices": {
+        "A": "Basic",
+        "B": "Developer",
+        "C": "Enterprise",
+        "D": "Business"
+      },
+      "answer": "D",
+      "explanation": "24時間365日対応の電話・チャットサポートはBusinessプラン以上で利用できます。Developerプランではメールサポートのみで、かつ対応は営業時間内（平日日中）に限られます。BasicプランではAWSの技術者への直接の問い合わせ自体ができません。設問の「最低限のプラン」という条件に対してはBusinessが正解です。EnterpriseやEnterprise On-Rampでも要件を満たしますが、コストを考えると最低限はBusinessです。本番ワークロードを運用する企業にはBusinessプランが推奨される最低ラインとされています。"
+    },
+    {
+      "id": "appB-005",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "コンシェルジュサポートチーム（請求やアカウントに関する専門チーム）を利用できるサポートプランはどれですか？",
+      "choices": {
+        "A": "Business以上のすべてのプラン",
+        "B": "Developer以上のすべてのプラン",
+        "C": "Enterprise On-Ramp以上のすべてのプラン",
+        "D": "Enterpriseプランのみ"
+      },
+      "answer": "C",
+      "explanation": "コンシェルジュサポートチームはEnterprise On-Ramp以上（Enterprise On-RampとEnterprise）で利用できます。高級ホテルのコンシェルジュのように、請求の最適化や複雑なアカウント管理について専門スタッフが丁寧に対応してくれます。BusinessプランやDeveloperプランでは利用できない点が試験でよく問われます。また「Enterpriseプランのみ」というのも誤りで、Enterprise On-Rampでも利用可能な点に注意しましょう。TAMと同様に「Enterprise On-Ramp以上」が正解です。"
+    },
+    {
+      "id": "appB-006",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "AWSサポートプランのうち、ビジネスクリティカルなシステムダウン時のレスポンスタイムが最も短いプランはどれですか？",
+      "choices": {
+        "A": "Business",
+        "B": "Developer",
+        "C": "Enterprise On-Ramp",
+        "D": "Enterprise"
+      },
+      "answer": "D",
+      "explanation": "ビジネスクリティカルなシステムダウン時の最短レスポンスタイムはEnterpriseプランの15分以内です。Enterprise On-Rampは30分以内、Businessは1時間以内です。Developerプランにはビジネスクリティカルなダウン時という区分はなく、一般的な障害時でも12時間以内です。「Enterprise > Enterprise On-Ramp > Business」の順にレスポンスが速いことを覚えておきましょう。ミッションクリティカルなシステム（金融機関のオンラインバンキングや医療システムなど）にはEnterpriseプランが適しています。"
+    },
+    {
+      "id": "appB-007",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "Developerサポートプランの説明として最も適切なものはどれですか？",
+      "choices": {
+        "A": "24時間365日の電話サポートが利用できる",
+        "B": "営業時間内のメールサポートが利用できる",
+        "C": "専任のTAMによるサポートが受けられる",
+        "D": "Trusted Advisorのすべてのチェック項目にアクセスできる"
+      },
+      "answer": "B",
+      "explanation": "Developerプランの最大の特徴は、営業時間内（平日日中）のメールサポートを利用できる点です。BasicプランにはなかったAWSの技術者への直接問い合わせが可能になります。ただし、24時間365日の電話サポートはBusinessプラン以上でのみ利用可能です。専任TAMはEnterpriseプランのみ、Trusted Advisorの全項目アクセスはBusinessプラン以上です。Developerプランは開発・テスト目的でAWSを使う方向けのプランで、本番環境の夜間障害対応には向きません。"
+    },
+    {
+      "id": "appB-008",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "Enterprise On-Rampプランで提供されるTAM（テクニカルアカウントマネージャー）の特徴として正しいものはどれですか？",
+      "choices": {
+        "A": "1人のTAMがそのお客様専任で担当する",
+        "B": "TAMはEnterpriseプランのみで利用できるため存在しない",
+        "C": "1人のTAMが複数のお客様を担当する共有型である",
+        "D": "TAMではなくコンシェルジュチームが対応する"
+      },
+      "answer": "C",
+      "explanation": "Enterprise On-RampプランのTAMはプール型（共有型）であり、1人のTAMが複数のお客様を担当します。専任ではありませんが、技術的な相談相手がいることは大きな安心材料です。一方、EnterpriseプランではTAMがお客様専任となります。「TAMはEnterpriseプランのみ」というのは誤りで、Enterprise On-Rampでも利用できます（これは試験の引っかけパターンの一つです）。コンシェルジュチームは請求・アカウントに関する専門チームであり、TAMとは別の機能です。"
+    },
+    {
+      "id": "appB-009",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "AWSのすべてのサポートプランで共通して利用できるリソースはどれですか？",
+      "choices": {
+        "A": "24時間365日の電話サポート",
+        "B": "AWS Support API",
+        "C": "AWS公式ドキュメントとコミュニティフォーラム（re:Post）",
+        "D": "Trusted Advisorの全チェック項目"
+      },
+      "answer": "C",
+      "explanation": "AWS公式ドキュメント・ホワイトペーパー・コミュニティフォーラム（re:Post）は、プランに関係なくすべてのAWSアカウントで利用できます。その他にも、AWS Health Dashboard（AWSサービスの障害状況確認）、アカウント・請求に関するサポート、Trusted Advisorのコアチェック項目もすべてのプランで利用可能です。24時間365日の電話サポートはBusinessプラン以上、AWS Support APIはBusinessプラン以上、Trusted Advisorの全項目はBusinessプラン以上でのみ利用できます。"
+    },
+    {
+      "id": "appB-010",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "Infrastructure Event Management（IEM）について、EnterpriseプランとEnterprise On-Rampプランの違いとして正しいものはどれですか？",
+      "choices": {
+        "A": "IEMはEnterpriseプランのみで利用でき、Enterprise On-Rampでは利用できない",
+        "B": "EnterpriseはIEMを追加料金なしで複数回利用でき、Enterprise On-Rampは年1回利用できる",
+        "C": "Enterprise On-RampはIEMを追加料金なしで複数回利用でき、Enterpriseは年1回利用できる",
+        "D": "EnterpriseとEnterprise On-Rampともに年1回のみIEMを利用できる"
+      },
+      "answer": "B",
+      "explanation": "IEM（Infrastructure Event Management）とは、大規模なイベントやローンチに合わせてAWSがインフラを事前に準備してくれるサービスです。Enterprise On-Rampでは年1回利用できます。Enterpriseプランでは追加料金なしで複数回利用できる点が違いです。Enterprise On-RampはEnterpriseへの「入口（On-Ramp）」という位置づけであり、多くの機能でEnterpriseが上位に位置しています。IEMはBusinessプランやDeveloperプランでは追加料金が必要です。"
+    },
+    {
+      "id": "appB-011",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "ある中小企業が複数の本番システムをAWSで運用しています。技術的な相談相手（TAM）が欲しいが、まだEnterpriseプランの費用は予算的に難しいという状況です。この企業に最も適したサポートプランはどれですか？",
+      "choices": {
+        "A": "Basic",
+        "B": "Business",
+        "C": "Developer",
+        "D": "Enterprise On-Ramp"
+      },
+      "answer": "D",
+      "explanation": "TAMによるサポートが必要な場合はEnterprise On-Ramp以上が必要です。Enterprise On-Rampは「Enterpriseへの入口」という位置づけで、共有型TAMによる定期的なレビューやアドバイスを受けながら、クリティカルな障害時には30分以内のレスポンスを得ることができます。Enterpriseプランよりも費用を抑えつつTAMのサポートを受けられる選択肢です。Businessプランはコスト的にも優れていますが、TAMは含まれません。設問に「TAMが欲しい」という要件があるため、Enterprise On-Rampが最適解です。"
+    },
+    {
+      "id": "appB-012",
+      "type": "single",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "Businessサポートプランで新たに利用できるようになる機能として**正しくない**ものはどれですか？",
+      "choices": {
+        "A": "AWS Support APIを使ったサポートチケットの自動作成",
+        "B": "24時間365日の電話・チャットサポート",
+        "C": "Trusted Advisorの全チェック項目へのアクセス",
+        "D": "専任のTAMによる継続的なサポート"
+      },
+      "answer": "D",
+      "explanation": "専任のTAM（テクニカルアカウントマネージャー）はEnterpriseプランのみで提供されます。Businessプランには含まれません。TAMが利用できるのはEnterprise On-Ramp以上であり、Enterprise On-Rampでは共有型、Enterpriseでは専任型です。一方、AWS Support API（プログラムからサポートチケットを自動作成できる仕組み）、24時間365日の電話・チャットサポート、Trusted Advisorの全項目へのアクセスはすべてBusinessプランから利用できます。否定型問題では「正しくないもの」を選ぶ点に注意してください。"
+    },
+    {
+      "id": "appB-013",
+      "type": "multi",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "AWSのサポートプランに関する説明として正しいものを2つ選んでください。",
+      "choices": {
+        "A": "DeveloperプランではTrusted Advisorの全チェック項目が利用できる",
+        "B": "BasicプランではAWSの技術者への直接の技術的問い合わせはできない",
+        "C": "TAMはBusinessプラン以上で利用できる",
+        "D": "電話サポートはBusinessプラン以上で利用できる",
+        "E": "コンシェルジュサポートチームはDeveloperプランから利用できる"
+      },
+      "answer": ["B", "D"],
+      "explanation": "Basicプランでは、AWSの技術者への直接の技術的問い合わせはできません。利用できるのは公式ドキュメント・フォーラムなどのセルフサービスリソースのみです（B: 正しい）。電話サポート（24時間365日）はBusinessプラン以上で利用できます（D: 正しい）。Developerプランで利用できるTrusted Advisorはコアチェック項目のみで、全項目アクセスはBusinessプラン以上です（A: 誤り）。TAMはEnterprise On-Ramp以上でのみ利用できます（C: 誤り、Businessには含まれない）。コンシェルジュサポートチームはEnterprise On-Ramp以上で利用できます（E: 誤り）。"
+    },
+    {
+      "id": "appB-014",
+      "type": "multi",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "TAM（テクニカルアカウントマネージャー）を利用できるAWSサポートプランを2つ選んでください。",
+      "choices": {
+        "A": "Basic",
+        "B": "Developer",
+        "C": "Business",
+        "D": "Enterprise On-Ramp",
+        "E": "Enterprise"
+      },
+      "answer": ["D", "E"],
+      "explanation": "TAMはEnterprise On-RampとEnterpriseの2つのプランで利用できます。Enterprise On-Rampでは複数のお客様で共有するプール型（共有型）TAMが提供され、Enterpriseプランではお客様専任のTAMが付きます。BasicプランとDeveloperプランはTAMを提供しておらず、セルフサービスまたはメールサポートのみです。BusinessプランにもTAMは含まれず、24時間365日の電話サポートやTrusted Advisor全項目が主な特徴です。試験では「TAM = Enterprise On-Ramp以上」という対応関係が繰り返し問われます。"
+    },
+    {
+      "id": "appB-015",
+      "type": "multi",
+      "domain": "第4分野: 請求、料金、サポート",
+      "text": "あるグローバル企業が、ミッションクリティカルな本番システムをAWSで運用しています。最短のレスポンスタイムと専任TAMによる継続的なサポートが必要です。この要件を満たすサポートの特徴を2つ選んでください。",
+      "choices": {
+        "A": "ビジネスクリティカルなシステムダウン時のレスポンスタイムが15分以内",
+        "B": "共有型TAMによる定期的なレビューが受けられる",
+        "C": "専任のTAMがお客様のAWS環境を深く理解してサポートしてくれる",
+        "D": "ビジネスクリティカルなシステムダウン時のレスポンスタイムが30分以内",
+        "E": "Trusted Advisorのコアチェック項目のみ利用できる"
+      },
+      "answer": ["A", "C"],
+      "explanation": "設問の要件は「最短のレスポンスタイム」と「専任TAM」であり、これはEnterpriseプランの特徴です。Enterpriseプランではビジネスクリティカルなシステムダウン時のレスポンスタイムが15分以内（A: 正しい）であり、専任TAMが付きます（C: 正しい）。共有型TAMはEnterprise On-Rampの特徴であり、専任ではありません（B: 誤り）。レスポンスタイム30分以内はEnterprise On-Rampの特徴であり、最短ではありません（D: 誤り）。Trusted Advisorのコアチェックのみというのは、BasicまたはDeveloperプランの特徴です（E: 誤り）。"
+    }
+  ]
+}

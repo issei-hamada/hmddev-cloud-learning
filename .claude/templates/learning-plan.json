@@ -1,0 +1,16 @@
+{
+  "created_at": "<ISO8601>",
+  "based_on_fpl": "sessions/<ファイル名>",
+  "fpl_score_rate": 0.0,
+  "plan": [
+    {
+      "priority": 1,
+      "chapter": "<章ID>",
+      "chapter_title": "<タイトル>",
+      "reason": "<優先する理由（FPL スコア・授業理解度）>",
+      "focus_sections": ["<セクション名>"],
+      "status": "pending"
+    }
+  ],
+  "completed_reviews": []
+}

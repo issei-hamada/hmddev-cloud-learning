@@ -137,3 +137,10 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Generated exam files
+exams/*.md
+
+# User learning records and reports (personal data)
+records/
+reports/

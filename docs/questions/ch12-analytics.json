@@ -1,0 +1,360 @@
+{
+  "chapter": "ch12",
+  "title": "データ分析",
+  "questions": [
+    {
+      "id": "ch12-001",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "ETL という言葉の意味として正しいものはどれですか？",
+      "choices": {
+        "A": "Execute（実行）→ Test（テスト）→ Log（記録）",
+        "B": "Export（出力）→ Translate（翻訳）→ Launch（起動）",
+        "C": "Extract（抽出）→ Transform（変換）→ Load（格納）",
+        "D": "Encrypt（暗号化）→ Transfer（転送）→ Load（格納）"
+      },
+      "answer": "C",
+      "explanation": "ETL は「Extract（抽出）→ Transform（変換）→ Load（格納）」の頭文字を取った言葉で、データ分析パイプラインの基本的な処理の流れを表します。Extractはデータソースからデータを取り出すこと、Transformは集めたデータを分析しやすい形式に変換・整形すること、Loadは整えたデータを分析用の保存先に格納することです。AはETL・ETLではありません。BはETLとは全く関係のない略語です。Dは頭文字が一致しません。"
+    },
+    {
+      "id": "ch12-002",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "データレイクの説明として最も適切なものはどれですか？",
+      "choices": {
+        "A": "構造化データも非構造化データも生のまま大量に保存できる場所",
+        "B": "分析用に構造化・整理されたデータのみを保存する場所",
+        "C": "テーブル形式に整えたデータを高速にSQLクエリで検索するデータベース",
+        "D": "リアルタイムに発生するストリーミングデータを一時的に保持する場所"
+      },
+      "answer": "A",
+      "explanation": "データレイクは、構造化データ（テーブル形式）も非構造化データ（画像、動画、ログファイルなど）も形式を問わず生のまま大量に保存できる場所です。AWSでは Amazon S3 がデータレイクとして広く使われます。B はデータウェアハウス（Amazon Redshift など）の説明です。C もデータウェアハウスの特徴です。D は Amazon Kinesis のような機能に近い説明で、データレイクの定義とは異なります。"
+    },
+    {
+      "id": "ch12-003",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "AWSでデータウェアハウスとして使われる代表的なサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Athena",
+        "B": "Amazon EMR",
+        "C": "Amazon Kinesis",
+        "D": "Amazon Redshift"
+      },
+      "answer": "D",
+      "explanation": "Amazon Redshift はAWSが提供するフルマネージドのデータウェアハウスサービスです。テラバイトからペタバイト規模の大量データに対する複雑な分析クエリを高速に実行するために最適化されています。列指向のデータ格納方式により、大規模な集計クエリを高速に処理できます。Athena はS3上のデータへのサーバーレスSQLクエリサービス、EMR はHadoop/Sparkのマネージドサービス、Kinesis はストリーミングデータの収集・処理サービスです。"
+    },
+    {
+      "id": "ch12-004",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "リアルタイムに発生するIoTセンサーのデータを途切れなく収集・処理したい場合に最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon QuickSight",
+        "B": "AWS Glue",
+        "C": "Amazon Redshift",
+        "D": "Amazon Kinesis"
+      },
+      "answer": "D",
+      "explanation": "Amazon Kinesis はリアルタイムに発生し続けるストリーミングデータを収集・処理するためのサービスです。IoTセンサー、Webサイトのクリックストリーム、アプリのログなど、大量かつ継続的に発生するデータの収集に適しています。AWS Glue はETL（データ変換・整理）サービス、QuickSight はBIツール（データ可視化）、Redshift はデータウェアハウス（大規模分析）です。「リアルタイムデータの収集」というキーワードが出たら Kinesis を連想してください。"
+    },
+    {
+      "id": "ch12-005",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Kinesis Data Streams と Kinesis Data Firehose の違いとして正しい説明はどれですか？",
+      "choices": {
+        "A": "Data Streams はバッチ処理専用で、Data Firehose はストリーミング処理専用である",
+        "B": "Data Streams はリアルタイムのカスタム処理に向き、Data Firehose は S3 や Redshift への自動配信に特化している",
+        "C": "どちらも同じ機能を持っており、名前が異なるだけである",
+        "D": "Data Firehose はカスタムロジックを適用でき、Data Streams は S3 への自動配信に特化している"
+      },
+      "answer": "B",
+      "explanation": "Kinesis Data Streams はリアルタイムにデータを収集し、Lambda などと連携してカスタムの処理ロジックを適用できるサービスです。柔軟性が高い反面、処理プログラムを自分で実装する必要があります。一方、Kinesis Data Firehose（現: Amazon Data Firehose）は、データをS3やRedshiftなどの保存先に自動的に配信することに特化しており、処理ロジックを自分で作る必要がありません。A はどちらもストリーミングデータのサービスであり、説明が誤りです。C は機能が異なります。D は説明が逆です。"
+    },
+    {
+      "id": "ch12-006",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "AWS Glue の説明として最も適切なものはどれですか？",
+      "choices": {
+        "A": "サーバーレスのETLサービスで、データの抽出・変換・格納を自動化する",
+        "B": "S3に保存されたデータに直接SQLでクエリを実行するサーバーレスサービス",
+        "C": "Hadoop や Spark をマネージドで実行できるビッグデータ処理サービス",
+        "D": "データをグラフやチャートで可視化するBIサービス"
+      },
+      "answer": "A",
+      "explanation": "AWS Glue はサーバーレスのETL（Extract・Transform・Load）サービスです。複数のデータソースからデータを抽出し、分析に適した形式に変換して、S3やRedshiftなどの保存先に格納する処理を自動化します。サーバーの準備・管理が不要で、ETL処理の内容の設定に集中できます。B は Amazon Athena の説明、C は Amazon EMR の説明、D は Amazon QuickSight の説明です。「ETL」「データの変換・整理」が出たら Glue を思い出してください。"
+    },
+    {
+      "id": "ch12-007",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Glue Data Catalog の役割として最も適切な説明はどれですか？",
+      "choices": {
+        "A": "データをリアルタイムに収集してS3に格納するサービス",
+        "B": "データのメタデータ（場所・形式・構造情報）を一元管理する仕組み",
+        "C": "データウェアハウスのクラスターを自動的にスケールするサービス",
+        "D": "データベースのバックアップを自動的に管理するサービス"
+      },
+      "answer": "B",
+      "explanation": "Glue Data Catalog は、データのメタデータ（データが「どこに」「どんな形式で」「どんな列（カラム）を持っているか」という情報）を一元管理する仕組みです。図書館の蔵書目録のように、大量のデータが「どこに何があるか」をすぐに把握できます。Glue のクローラー機能でS3などのデータを自動スキャンしてメタデータを登録でき、Athena や Redshift Spectrum など他の分析サービスからも参照できます。A はKinesis、C はRedshiftのAuto Scaling機能、D はRDSの自動バックアップの説明です。"
+    },
+    {
+      "id": "ch12-008",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon Athena の課金モデルとして正しいものはどれですか？",
+      "choices": {
+        "A": "クラスターのインスタンスタイプと起動時間に基づく課金",
+        "B": "クエリでスキャンしたデータ量に基づく課金",
+        "C": "月額固定料金で利用できる",
+        "D": "クエリの実行回数に基づく課金"
+      },
+      "answer": "B",
+      "explanation": "Amazon Athena はクエリでスキャンしたデータ量に基づいて課金されます（スキャン量課金）。クエリを実行しないときはコストが発生しないため、頻度が低いアドホック（その場の必要に応じた）な分析に向いています。A はAmazon Redshift（プロビジョニング型クラスター）の課金モデルに近い説明です。C は固定料金ではありません。D は実行回数課金ではなくスキャン量課金です。このスキャン量課金という特徴がAthenaの大きな利点の一つです。"
+    },
+    {
+      "id": "ch12-009",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "ある企業のデータエンジニアが、S3に保存されたCSVファイルに対して、サーバーを準備せずにSQLクエリを直接実行して分析したいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Athena",
+        "B": "Amazon EMR",
+        "C": "Amazon Kinesis",
+        "D": "Amazon Redshift"
+      },
+      "answer": "A",
+      "explanation": "Amazon Athena は、S3に保存されたデータに対してサーバーレスで直接SQLクエリを実行できるサービスです。インフラの準備・管理が不要で、S3のデータをそのまま分析できるため、この要件に最適です。Amazon EMR はHadoop/Sparkを使った大規模分散処理に向いており、サーバー設定が必要です。Kinesis はストリーミングデータの収集・処理サービスで、S3上のファイルへのSQLクエリには使いません。Redshift はデータウェアハウスで、クラスターの構築が必要です。"
+    },
+    {
+      "id": "ch12-010",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Athena と Redshift の使い分けとして最も正しい説明はどれですか？",
+      "choices": {
+        "A": "Athena は毎日大規模な分析を繰り返す場合に向き、Redshift はたまに分析したい場合に向く",
+        "B": "Athena はリアルタイムのストリーミング処理に向き、Redshift はバッチ処理に向く",
+        "C": "Athena はビッグデータの分散処理に向き、Redshift はデータの可視化に向く",
+        "D": "Athena はたまにアドホック分析をする場合に向き、Redshift は毎日大規模な分析を繰り返す場合に向く"
+      },
+      "answer": "D",
+      "explanation": "Athena はサーバーレスでスキャン量課金のため、使うときだけコストが発生します。そのため、頻度が低いアドホックな分析に向いています。Redshift は専用のクラスターを常時稼働させるデータウェアハウスで、頻繁に大規模な分析クエリを実行する場合に効率的です。A は説明が逆です。B の「ストリーミング処理」は Kinesis の説明です。C の「ビッグデータの分散処理」は EMR、「データ可視化」は QuickSight の説明です。「たまに分析→Athena」「毎日大規模→Redshift」と覚えましょう。"
+    },
+    {
+      "id": "ch12-011",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon EMR の説明として最も適切なものはどれですか？",
+      "choices": {
+        "A": "Apache Hadoop や Apache Spark などのビッグデータ処理フレームワークをマネージドで実行できるサービス",
+        "B": "ストリーミングデータをS3やRedshiftに自動配信するサービス",
+        "C": "S3上のデータに対してサーバーレスでSQLクエリを実行するサービス",
+        "D": "データをグラフやチャートで可視化するクラウドネイティブのBIサービス"
+      },
+      "answer": "A",
+      "explanation": "Amazon EMR（Elastic MapReduce）は、Apache Hadoop や Apache Spark などのオープンソースのビッグデータ処理フレームワークをマネージドで実行できるサービスです。大量のデータを複数のサーバーで分散処理する際に使われます。クラスターの構築・管理をAWSに任せられるため、ユーザーはデータ処理の内容に集中できます。B は Amazon Data Firehose（Kinesis Data Firehose）、C は Amazon Athena、D は Amazon QuickSight の説明です。"
+    },
+    {
+      "id": "ch12-012",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon OpenSearch Service の主な用途として最も適切なものはどれですか？",
+      "choices": {
+        "A": "ETLジョブの実行とデータのメタデータ管理",
+        "B": "大規模なデータウェアハウスでの複雑な集計クエリの高速実行",
+        "C": "アプリケーションのログ分析や全文検索",
+        "D": "データをグラフやダッシュボードで可視化するBI機能"
+      },
+      "answer": "C",
+      "explanation": "Amazon OpenSearch Service は、大量のデータに対する全文検索やログ分析を行うためのマネージドサービスです。アプリケーションのログ分析、Webサイトの検索機能の構築、セキュリティイベントの監視などに使われます。もともと「Amazon Elasticsearch Service」という名前でしたが、OpenSearch Serviceに改名されました。A は AWS Glue、B は Amazon Redshift、D は Amazon QuickSight の説明です。「ログ分析」「全文検索」というキーワードが出たら OpenSearch Service を連想してください。"
+    },
+    {
+      "id": "ch12-013",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon QuickSight の説明として最も適切なものはどれですか？",
+      "choices": {
+        "A": "データレイクの構築・管理とアクセス権限の一元管理を行うサービス",
+        "B": "リアルタイムに発生するデータを収集してS3に配信するサービス",
+        "C": "AWSが提供するクラウドネイティブのBIサービスで、データからグラフやダッシュボードを作成できる",
+        "D": "Apache Spark を使ったビッグデータの分散処理をマネージドで提供するサービス"
+      },
+      "answer": "C",
+      "explanation": "Amazon QuickSight はAWSが提供するクラウドネイティブのBI（Business Intelligence）サービスです。データからグラフやチャートを作成し、ダッシュボードとして関係者に共有できます。Athena、Redshift、S3、RDS などさまざまなデータソースに接続でき、データ分析パイプラインの可視化の工程を担います。サーバーレスで従量課金です。A は AWS Lake Formation、B は Amazon Data Firehose（Kinesis Data Firehose）、D は Amazon EMR の説明です。"
+    },
+    {
+      "id": "ch12-014",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "AWS Lake Formation の役割として最も適切な説明はどれですか？",
+      "choices": {
+        "A": "ストリーミングデータを収集してリアルタイムに処理するサービス",
+        "B": "データのグラフ化・ダッシュボード作成を行うBIサービス",
+        "C": "S3に保存されたデータに対してサーバーレスでSQLクエリを実行するサービス",
+        "D": "データレイクの構築・管理およびアクセス権限の一元管理を行うサービス"
+      },
+      "answer": "D",
+      "explanation": "AWS Lake Formation は、S3上のデータレイクの構築・管理を簡単に行えるサービスです。S3 と Glue Data Catalog と連携して、データレイクのアクセス権限の管理やセキュリティ設定を一元化します。「データレイクを安全にまとめて管理したい」という要件に適しています。A は Amazon Kinesis、B は Amazon QuickSight、C は Amazon Athena の説明です。Lake FormationはS3、Glue、Athenaなど複数のサービスをまとめて管理するオーケストレーター的な役割を持ちます。"
+    },
+    {
+      "id": "ch12-015",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "バッチ処理とストリーミング処理の違いとして正しい説明はどれですか？",
+      "choices": {
+        "A": "バッチ処理は一定期間のデータをまとめて一括処理し、ストリーミング処理はデータが発生したそばからリアルタイムに処理する",
+        "B": "バッチ処理とストリーミング処理は同じ意味で使われる",
+        "C": "バッチ処理はAmazon Kinesisで、ストリーミング処理はAWS Glueで行う",
+        "D": "バッチ処理はデータを発生したそばからリアルタイムに処理し、ストリーミング処理は一定期間のデータをまとめて処理する"
+      },
+      "answer": "A",
+      "explanation": "バッチ処理は、一定の期間分のデータをまとめて一括で処理する方法です（例：毎晩深夜に当日の売上データを集計）。ストリーミング処理は、データが発生したそばからリアルタイムに処理する方法です（例：ECサイトのアクセスをリアルタイムに監視して不正を検知）。B は全く異なる概念で誤りです。C はサービスの説明が誤りです。D は説明が逆です。AWSでは Kinesis がストリーミング処理、AWS Glue はETL（バッチ的な変換処理）に向いています。"
+    },
+    {
+      "id": "ch12-016",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "ある企業がデータ分析パイプラインを構築しています。S3に保存された大量のログデータの変換・整形を自動化したいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Athena",
+        "B": "AWS Glue",
+        "C": "Amazon EMR",
+        "D": "Amazon QuickSight"
+      },
+      "answer": "B",
+      "explanation": "AWS Glue はサーバーレスのETLサービスで、データの抽出・変換・格納の処理を自動化します。S3上のデータを変換・整形して分析用の形式に加工するという要件に最適です。GlueのクローラーでS3のデータを自動スキャンし、Data Catalogにメタデータを登録した上で、ETLジョブで変換処理を実行できます。Athena は変換ではなくSQLによる分析クエリ、EMR はHadoop/Sparkによる大規模分散処理（より高度な用途）、QuickSight はデータの可視化に使われるサービスです。"
+    },
+    {
+      "id": "ch12-017",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon Redshift が採用している「列指向」のデータ格納方式のメリットとして正しいものはどれですか？",
+      "choices": {
+        "A": "全ての列を読み込まなくてよいため、集計クエリが高速になる",
+        "B": "データの書き込み速度が行指向に比べて高速になる",
+        "C": "データをリアルタイムに処理できるようになる",
+        "D": "ストレージの暗号化が自動的に行われる"
+      },
+      "answer": "A",
+      "explanation": "列指向（カラムナ）ストレージは、データを列（カラム）単位で格納します。例えば「売上金額の合計」を計算するとき、行指向では全行を読み込む必要がありますが、列指向では売上金額の列だけを読めばよいので、分析クエリが高速になります。これはRedshiftが大規模データ分析に向いている理由の一つです。B は書き込み速度については列指向の主なメリットではありません（むしろ書き込みは行指向の方が速い場合があります）。C はKinesisなどストリーミングサービスの特徴です。D は暗号化機能とは別の話です。"
+    },
+    {
+      "id": "ch12-018",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "データ分析パイプラインにおいて、各サービスの役割の組み合わせとして正しいものはどれですか？",
+      "choices": {
+        "A": "収集: Amazon QuickSight → 加工: Amazon EMR → 分析: AWS Glue",
+        "B": "収集: Amazon Athena → 加工: Amazon Redshift → 分析: Amazon Kinesis",
+        "C": "収集: AWS Glue → 加工: Amazon Kinesis → 分析: Amazon QuickSight",
+        "D": "収集: Amazon Kinesis → 加工: AWS Glue → 分析: Amazon Athena / Redshift"
+      },
+      "answer": "D",
+      "explanation": "データ分析パイプラインの典型的な流れは「収集 → 加工（ETL）→ 分析 → 可視化」です。収集は Amazon Kinesis（ストリーミングデータの収集）、加工は AWS Glue（ETL処理でデータを変換・整形）、分析は Amazon Athena（アドホッククエリ）または Amazon Redshift（大規模定常分析）、可視化は Amazon QuickSight（ダッシュボード作成）が担います。A・B・C はサービスの役割が入れ替わっており誤りです。このパイプライン全体の流れは試験頻出テーマです。"
+    },
+    {
+      "id": "ch12-019",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon QuickSight の特徴として**正しくない**ものはどれですか？",
+      "choices": {
+        "A": "Athena、Redshift、S3、RDSなど複数のデータソースと連携できる",
+        "B": "サーバーレスで動作し、クラスターの管理が不要である",
+        "C": "データを常時保存しておくデータウェアハウス機能を持つ",
+        "D": "ML Insightsによりデータの異常検知や将来予測を行える"
+      },
+      "answer": "C",
+      "explanation": "Amazon QuickSight はBIサービス（データ可視化ツール）であり、データウェアハウスの機能は持ちません。データを保存・蓄積するのではなく、他のサービス（Athena、Redshift、S3、RDSなど）に保存されたデータを読み込んでグラフやダッシュボードを作成します。データウェアハウス機能は Amazon Redshift が担います。A は正しい説明です（複数のデータソースと連携可能）。B は正しい説明です（サーバーレスで従量課金）。D は正しい説明です（ML Insightsで異常検知・予測が可能）。"
+    },
+    {
+      "id": "ch12-020",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "ある企業がECサイトのアクセスログをリアルタイムに監視し、不正アクセスを即座に検知するシステムを構築したいと考えています。データ収集の工程で最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "AWS Glue",
+        "B": "Amazon Redshift",
+        "C": "Amazon Kinesis Data Streams",
+        "D": "Amazon Athena"
+      },
+      "answer": "C",
+      "explanation": "Amazon Kinesis Data Streams は、リアルタイムに発生するストリーミングデータを収集・処理するためのサービスです。データが発生したそばから収集して、Lambda などのカスタムロジックでリアルタイムに処理できます。不正アクセスの即時検知のように「リアルタイム」が求められる用途に最適です。AWS Glue はETL（データの変換・整形）サービスです。Redshift はデータウェアハウスで、大規模な定常分析に使います。Athena はS3上のデータへのアドホック分析（事後の分析）に向きます。"
+    },
+    {
+      "id": "ch12-021",
+      "type": "multi",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "データ分析パイプラインにおいて、データの「収集」フェーズで使用されるAWSサービスを2つ選んでください。",
+      "choices": {
+        "A": "Amazon Kinesis Data Streams",
+        "B": "Amazon Athena",
+        "C": "Amazon Data Firehose（Kinesis Data Firehose）",
+        "D": "Amazon Redshift",
+        "E": "Amazon QuickSight"
+      },
+      "answer": ["A", "C"],
+      "explanation": "データ収集フェーズで使われる主要サービスは Amazon Kinesis Data Streams と Amazon Data Firehose（旧Kinesis Data Firehose）です。Data Streams はリアルタイムなカスタム処理に向き、Data Firehose はS3やRedshiftへの自動配信に特化しています。Amazon Athena はS3上のデータへのSQLクエリ（分析フェーズ）、Amazon Redshift はデータウェアハウス（分析フェーズ）、Amazon QuickSight はBI・可視化（可視化フェーズ）で使われます。パイプラインの各工程とサービスの対応を整理しておきましょう。"
+    },
+    {
+      "id": "ch12-022",
+      "type": "multi",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "AWS Glue の機能として正しいものを2つ選んでください。",
+      "choices": {
+        "A": "ETLジョブによるデータの抽出・変換・格納の自動化",
+        "B": "ストリーミングデータのリアルタイム収集",
+        "C": "Glue Data Catalog によるデータのメタデータの一元管理",
+        "D": "大規模データウェアハウスでの高速集計クエリの実行",
+        "E": "データのグラフやチャートによる可視化"
+      },
+      "answer": ["A", "C"],
+      "explanation": "AWS Glue の主な機能は「ETLジョブ」と「Glue Data Catalog」の2つです。ETLジョブはデータの抽出（Extract）・変換（Transform）・格納（Load）を自動化します。Glue Data Catalog はデータのメタデータ（場所・形式・構造）を一元管理する仕組みで、Athena や Redshift などからも参照されます。B のリアルタイム収集は Amazon Kinesis の機能、D の大規模集計は Amazon Redshift の機能、E の可視化は Amazon QuickSight の機能です。Glue のキーワードは「ETL」と「メタデータ管理」です。"
+    },
+    {
+      "id": "ch12-023",
+      "type": "multi",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon Athena の特徴として正しいものを2つ選んでください。",
+      "choices": {
+        "A": "S3に保存されたデータにサーバーレスでSQLクエリを実行できる",
+        "B": "常時稼働するクラスターを構築して定常的な分析に使う",
+        "C": "クエリでスキャンしたデータ量に基づいて課金される",
+        "D": "Hadoop や Spark の分散処理フレームワークを実行できる",
+        "E": "データをグラフやダッシュボードに可視化するBIサービスである"
+      },
+      "answer": ["A", "C"],
+      "explanation": "Amazon Athena の特徴は「S3上のデータへのサーバーレスSQLクエリ」と「スキャン量課金」です。インフラの管理が不要で、S3に保存されたCSVやParquetなどのファイルに直接SQLを実行できます。課金はクエリが実際にスキャンしたデータ量に基づくため、使わないときはコストがかかりません。B は Amazon Redshift（プロビジョニング型クラスター）の特徴、D は Amazon EMR の特徴、E は Amazon QuickSight の説明です。Athena は「サーバーレス」と「スキャン量課金」が重要キーワードです。"
+    },
+    {
+      "id": "ch12-024",
+      "type": "multi",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "データレイクとデータウェアハウスの比較として正しいものを2つ選んでください。",
+      "choices": {
+        "A": "データレイクはあらゆる形式のデータを生のまま保存でき、AWSではS3がよく使われる",
+        "B": "データウェアハウスは非構造化データ（画像・動画など）の保存に特化している",
+        "C": "データウェアハウスは分析しやすいように構造化されたデータを保存し、高速なSQLクエリに向く",
+        "D": "データレイクはデータウェアハウスの下位概念であり、完全に内包される",
+        "E": "データレイクはストレージコストが高く、小規模データ向けである"
+      },
+      "answer": ["A", "C"],
+      "explanation": "データレイクはあらゆる形式のデータ（構造化・非構造化）を生のまま大量に保存でき、AWSではAmazon S3がよく使われます。データウェアハウスは分析しやすいように構造化・整理されたデータを保存し、大量データへの高速なSQLクエリに向いています（AWSではAmazon Redshift）。B は誤りで、非構造化データに特化しているのはデータレイクです。D は誤りで、データレイクとデータウェアハウスは別個の概念です。E は誤りで、S3はストレージコストが安く、大量データの保存に適しています。"
+    },
+    {
+      "id": "ch12-025",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "ある企業が毎日テラバイト規模の販売データに対して複雑な集計クエリを繰り返し実行するBI基盤を構築したいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Athena",
+        "B": "Amazon EMR",
+        "C": "Amazon Kinesis",
+        "D": "Amazon Redshift"
+      },
+      "answer": "D",
+      "explanation": "Amazon Redshift は、テラバイトからペタバイト規模の大量データに対して複雑な分析クエリを高速に繰り返し実行するためのデータウェアハウスサービスです。毎日のように大規模な分析を行う場合は、スキャン量課金のAthenaよりもRedshiftの方がコスト効率が良くなります。Athena はたまにアドホック分析する場合に向いており、頻繁な大規模分析には向きません。EMR はHadoop/Sparkによる大規模分散処理に使われますが、定常的なSQLベースのBI分析にはRedshiftが適しています。Kinesis はストリーミングデータの収集サービスです。"
+    }
+  ]
+}

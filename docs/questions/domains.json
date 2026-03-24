@@ -1,0 +1,22 @@
+{
+  "domain1": {
+    "name": "クラウドのコンセプト",
+    "weight": 24,
+    "chapters": ["ch00", "ch07", "ch14"]
+  },
+  "domain2": {
+    "name": "セキュリティとコンプライアンス",
+    "weight": 30,
+    "chapters": ["ch09"]
+  },
+  "domain3": {
+    "name": "クラウドテクノロジーとサービス",
+    "weight": 34,
+    "chapters": ["ch01", "ch02", "ch03", "ch04", "ch05", "ch06", "ch08", "ch10", "ch11", "ch12", "ch13", "ch16", "appA"]
+  },
+  "domain4": {
+    "name": "請求、料金、サポート",
+    "weight": 12,
+    "chapters": ["ch15", "appB"]
+  }
+}

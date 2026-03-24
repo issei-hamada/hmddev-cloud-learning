@@ -1,0 +1,289 @@
+{
+  "chapter": "ch13",
+  "title": "AI・機械学習",
+  "questions": [
+    {
+      "id": "ch13-001",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "AWSのAI/MLサービスは2つの層に分類されます。機械学習の専門知識がなくてもAPIを呼び出すだけで利用できる層として最も適切な説明はどれですか？",
+      "choices": {
+        "A": "MLプラットフォーム層（SageMaker AIが代表例）",
+        "B": "AIサービス層（Rekognition、Comprehendなどが含まれる）",
+        "C": "基盤モデル層（Bedrockが代表例）",
+        "D": "インフラ層（EC2やS3が含まれる）"
+      },
+      "answer": "B",
+      "explanation": "AWSのAI/MLサービスは「AIサービス層」と「MLプラットフォーム層」の2層構造に分かれています。AIサービス層は、機械学習の専門知識がなくてもAPIを呼び出すだけで画像認識、音声変換、テキスト分析などの機能を使えるサービス群（Rekognition、Comprehend、Polly、Transcribe、Lex、Translateなど）が含まれます。MLプラットフォーム層は、SageMaker AIが代表であり、独自のモデルを構築・学習・デプロイするための環境で、機械学習の専門知識が必要です。基盤モデル層やインフラ層という分類はAWSのAI/ML分類としては存在しません。"
+    },
+    {
+      "id": "ch13-002",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon SageMaker AI の主な役割として最も正しいものはどれですか？",
+      "choices": {
+        "A": "機械学習モデルの構築・学習・デプロイを一気通貫で行う統合プラットフォーム",
+        "B": "社内ドキュメントを横断検索するエンタープライズ検索エンジン",
+        "C": "テキストを自然な音声に変換するサービス",
+        "D": "複数の基盤モデルをAPIで提供するマネージドサービス"
+      },
+      "answer": "A",
+      "explanation": "Amazon SageMaker AI は、機械学習モデルのビルド（構築）・トレーニング（学習）・デプロイ（公開）を一つのプラットフォームで行える統合サービスです。データサイエンティストがサーバーの準備や環境構築に時間を費やさず、モデル開発に集中できるよう設計されています。社内ドキュメントの横断検索はAmazon Kendra、テキストの音声変換はAmazon Polly、複数の基盤モデルのAPI提供はAmazon Bedrockの役割です。試験では「独自のMLモデルを構築したい」というシナリオでSageMakerを選ぶことを覚えておきましょう。"
+    },
+    {
+      "id": "ch13-003",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "ある企業が、ユーザーからアップロードされた画像に暴力的または性的なコンテンツが含まれていないかを自動でチェックする仕組みを構築したいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Comprehend",
+        "B": "Amazon Rekognition",
+        "C": "Amazon Textract",
+        "D": "Amazon SageMaker AI"
+      },
+      "answer": "B",
+      "explanation": "Amazon Rekognition は、画像や動画の分析をAPIで提供するマネージドサービスです。不適切コンテンツ（暴力的・性的な内容）の検出はRekognitionの主要機能の一つであり、SNSやコンテンツプラットフォームのモデレーション（内容チェック）に活用されます。Amazon Comprehend はテキストの自然言語処理サービスであり、画像の分析はできません。SageMaker AIは独自MLモデルの構築用で、すぐに使えるAPIサービスではありません。Amazon Textractは画像やPDFからテキストを抽出するサービスで、コンテンツのモデレーションを目的としていません。"
+    },
+    {
+      "id": "ch13-004",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "コールセンターの通話録音データを文字に起こして、後から検索や分析ができるようにしたいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Polly",
+        "B": "Amazon Lex",
+        "C": "Amazon Translate",
+        "D": "Amazon Transcribe"
+      },
+      "answer": "D",
+      "explanation": "Amazon Transcribe は、音声データをテキストに変換する（文字起こし）サービスです。コールセンターの通話内容を文字に起こす用途は、Transcribeの代表的なユースケースの一つです。Amazon Polly は逆方向のサービスで、テキストを音声に変換します。Amazon Translate はテキストの翻訳サービスです。Amazon Lex はチャットボットや音声ボットを構築するサービスであり、既存の音声データを文字起こしする機能はありません。Polly（テキスト→音声）とTranscribe（音声→テキスト）は方向が逆なので、試験でよく混同されます。「音声→テキスト」はTranscribeと確実に覚えましょう。"
+    },
+    {
+      "id": "ch13-005",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "eラーニングアプリケーションで、テキスト形式の教材を自動的に音声ナレーションに変換して提供したいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Kendra",
+        "B": "Amazon Polly",
+        "C": "Amazon Transcribe",
+        "D": "Amazon Rekognition"
+      },
+      "answer": "B",
+      "explanation": "Amazon Polly は、テキストを自然な音声に変換するTTS（Text-to-Speech）サービスです。eラーニング教材のナレーション生成はPollyの代表的な活用例の一つです。日本語を含む多言語に対応しており、男性・女性など複数の音声タイプを選べます。Amazon Transcribe はPollyとは逆方向で、音声をテキストに変換するSTT（Speech-to-Text）サービスです。Amazon Kendra は社内文書の検索エンジンであり、音声変換とは無関係です。Amazon Rekognition は画像・動画の分析サービスです。Pollyは「テキスト→音声」、Transcribeは「音声→テキスト」という方向の違いを確実に覚えましょう。"
+    },
+    {
+      "id": "ch13-006",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "ある小売企業が、大量の商品レビューを自動で分析し、ポジティブな評価とネガティブな評価に分類したいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Comprehend",
+        "B": "Amazon Kendra",
+        "C": "Amazon Lex",
+        "D": "Amazon Translate"
+      },
+      "answer": "A",
+      "explanation": "Amazon Comprehend は自然言語処理（NLP）のAIサービスで、感情分析（テキストがポジティブ・ネガティブ・ニュートラルかを判定）、キーフレーズ抽出、エンティティ認識などを行います。商品レビューをポジティブ・ネガティブに自動分類する用途はComprehendの代表的なユースケースです。Amazon Kendra は社内文書の検索エンジンです。Amazon Lex はチャットボット構築サービスです。Amazon Translate はテキスト翻訳サービスであり、感情分析の機能はありません。「テキストの感情を分析したい」→ Comprehend という対応を覚えておきましょう。"
+    },
+    {
+      "id": "ch13-007",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "ピザ注文サイトで、ユーザーがチャットや音声で注文内容を伝えられるインターフェースを構築したいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Polly",
+        "B": "Amazon Comprehend",
+        "C": "Amazon Lex",
+        "D": "Amazon Transcribe"
+      },
+      "answer": "C",
+      "explanation": "Amazon Lex は、会話型のインターフェース（チャットボット、音声ボット）を構築するためのサービスです。Amazon Alexa（アレクサ）と同じ技術基盤を使っており、ユーザーからの音声やテキストの入力を理解して適切な応答を返すチャットボットを作れます。「チャットボットの構築」「会話型インターフェース」と聞いたらLexを選びます。Amazon Polly はテキストを音声に変換するサービスです。Amazon Comprehend はテキストの感情分析やキーフレーズ抽出を行うサービスです。Amazon Transcribe は音声をテキストに変換するサービスです。"
+    },
+    {
+      "id": "ch13-008",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "グローバル展開するWebサービスで、海外ユーザーからのサポート問い合わせを自動的に日本語に翻訳して担当者に転送したいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Translate",
+        "B": "Amazon Comprehend",
+        "C": "Amazon Textract",
+        "D": "Amazon Transcribe"
+      },
+      "answer": "A",
+      "explanation": "Amazon Translate は、テキストの翻訳をAPIで提供するサービスです。日本語・英語・フランス語など多数の言語間で翻訳を行えます。海外からのカスタマーサポート問い合わせの翻訳はTranslateの代表的な活用例です。ニューラル機械翻訳（ディープラーニングを使った高精度な翻訳技術）によって高品質な翻訳を提供します。Amazon Comprehend はテキストの感情分析やキーフレーズ抽出を行うサービスで、翻訳機能はありません。Amazon Textract は画像・PDFからテキストを抽出するサービスです。Amazon Transcribe は音声をテキストに変換するサービスです。"
+    },
+    {
+      "id": "ch13-009",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "ある企業が、紙の請求書をスキャンした画像から、請求日・合計金額・明細などの項目を自動でデータ化したいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Rekognition",
+        "B": "Amazon Textract",
+        "C": "Amazon Comprehend",
+        "D": "Amazon Kendra"
+      },
+      "answer": "B",
+      "explanation": "Amazon Textract は、画像やPDFからテキスト、フォーム（入力欄）、テーブル（表）を自動的に抽出するサービスです。従来のOCR（光学文字認識）と異なり、文書の構造を理解して「この数字は合計金額だ」といったフィールドの意味まで把握できます。請求書や領収書のデータ化はTextractの代表的なユースケースです。Amazon Rekognition は画像の物体検出や顔認識を行うサービスで、文書構造の理解には特化していません。Amazon Comprehend はテキストの感情分析サービスです。Amazon Kendra は社内文書の検索エンジンです。「ドキュメントからデータを抽出する」→ Textractと覚えましょう。"
+    },
+    {
+      "id": "ch13-010",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "ある企業では、SharePointやS3など複数の場所に社内ドキュメントが散在しており、「去年の第3四半期の売上はいくらだった？」のような自然言語での質問で必要な情報を見つけたいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Bedrock",
+        "B": "Amazon Comprehend",
+        "C": "Amazon SageMaker AI",
+        "D": "Amazon Kendra"
+      },
+      "answer": "D",
+      "explanation": "Amazon Kendra は、エンタープライズ検索（企業向けの知的検索）サービスです。SharePoint、S3、社内Wikiなどさまざまなデータソースに接続し、自然言語で質問を入力すると関連するドキュメントから的確な回答を見つけ出します。「社内文書の検索エンジン」として覚えておきましょう。Amazon Bedrock は複数の生成AI基盤モデルをAPIで提供するプラットフォームです。Amazon Comprehend はテキストの感情分析やキーフレーズ抽出サービスです。SageMaker AI は独自MLモデルの構築・学習・デプロイの統合サービスです。KendraとAmazon Qの違いも押さえておきましょう：Kendraは「検索」特化、Amazon Qは「検索＋生成AIによる回答・要約」が可能です。"
+    },
+    {
+      "id": "ch13-011",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon Bedrock の説明として最も正しいものはどれですか？",
+      "choices": {
+        "A": "機械学習モデルをゼロから構築・学習するためのプラットフォーム",
+        "B": "画像や動画を分析するAIサービス",
+        "C": "チャットボットを構築するためのサービス",
+        "D": "Anthropic Claude や Meta Llama など複数の基盤モデルをAPIで利用できるマネージドサービス"
+      },
+      "answer": "D",
+      "explanation": "Amazon Bedrock は、複数の基盤モデル（FM: Foundation Model）プロバイダーが提供するモデルをAPIで利用できるマネージドサービスです。Anthropic のClaude、Meta のLlama、Amazon 独自の Titanをはじめ、Cohere、Stability AI など多数の基盤モデルが用意されています。独自モデルをゼロから学習する必要がなく、APIを呼び出すだけで生成AI機能をすぐに使い始められます。機械学習モデルをゼロから構築するのはSageMaker AIの役割です。画像・動画分析はRekognition、チャットボット構築はLexの役割です。試験では「生成AIを手軽に使いたい」→ Bedrockという対応を押さえましょう。"
+    },
+    {
+      "id": "ch13-012",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon Rekognition の機能として**含まれない**ものはどれですか？",
+      "choices": {
+        "A": "画像に写っている物体の検出とラベル付け",
+        "B": "画像の中の顔の検出と感情推定",
+        "C": "テキストから自然な音声を生成すること",
+        "D": "画像内のテキスト（看板の文字など）の読み取り"
+      },
+      "answer": "C",
+      "explanation": "テキストから自然な音声を生成するのはAmazon Pollyの機能であり、Amazon Rekognitionの機能では**ありません**。Amazon Rekognitionの主な機能は、物体検出・ラベル付け（画像に何が写っているかを判別）、顔分析・顔認識（年齢層や感情の推定、同一人物かどうかの比較）、テキスト検出（看板やナンバープレートの文字を読み取り）、不適切コンテンツの検出（暴力的・性的な内容の判定）です。Rekognitionはあくまで画像・動画の「分析」サービスであり、音声の生成（Pollyの役割）とは全く異なります。この問題のように「含まれないもの」を問う場合は、否定語に注意して選択肢を一つひとつ確認しましょう。"
+    },
+    {
+      "id": "ch13-013",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon Q Business の説明として最も正しいものはどれですか？",
+      "choices": {
+        "A": "機械学習モデルの学習データを管理するサービス",
+        "B": "テキストを複数の言語に翻訳するサービス",
+        "C": "企業の社内データと連携して質問への回答や要約を行う生成AIアシスタント",
+        "D": "画像内の顔を認識して本人確認を行うサービス"
+      },
+      "answer": "C",
+      "explanation": "Amazon Q Business は、企業の社内データ（ドキュメント、Wiki、メールなど）と連携して、社員からの質問に回答したり要約を作成したりする生成AIベースのビジネスアシスタントです。Amazon Kendra が社内文書の「検索」に特化しているのに対して、Amazon Q Business は検索に加えて生成AIによる回答の生成や要約も行える点が特徴です。Amazon Q は Amazon Bedrock 上に構築された「AWSが作った生成AIアプリケーション」と理解しておきましょう。機械学習モデルの学習データ管理はSageMaker AIの領域、テキスト翻訳はTranslate、顔認識はRekognitionの機能です。"
+    },
+    {
+      "id": "ch13-014",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon SageMaker AI の学習データの保管先として一般的によく使われるAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon RDS",
+        "B": "Amazon DynamoDB",
+        "C": "Amazon EFS",
+        "D": "Amazon S3"
+      },
+      "answer": "D",
+      "explanation": "Amazon S3（Simple Storage Service）は、SageMaker AIの学習データの保管先として一般的に使われます。S3は大量のデータを低コストで保管できるオブジェクトストレージサービスであり、機械学習の学習用データセットの格納に適しています。SageMaker AIはS3に保存されたデータを学習時に参照します。Amazon RDSはリレーショナルデータベースサービスで、構造化データの管理に使いますが、大規模な機械学習データセットの保管には一般的ではありません。Amazon DynamoDBはNoSQLデータベースです。Amazon EFSはファイルストレージサービスです。この関係は試験でも問われることがあるため、「SageMaker AI ＋ S3」の組み合わせを覚えておきましょう。"
+    },
+    {
+      "id": "ch13-015",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon Bedrock の Knowledge Bases（ナレッジベース）機能の説明として最も正しいものはどれですか？",
+      "choices": {
+        "A": "社内のドキュメントやデータをもとに基盤モデルの回答精度を上げるRAGの仕組み",
+        "B": "基盤モデルの応答をフィルタリングして不適切な内容を防ぐ安全機能",
+        "C": "複数の言語に対応した翻訳モデルを管理する機能",
+        "D": "機械学習モデルの学習履歴を記録する機能"
+      },
+      "answer": "A",
+      "explanation": "Amazon Bedrock の Knowledge Bases（ナレッジベース）は、RAG（Retrieval-Augmented Generation、検索拡張生成）と呼ばれる仕組みを実現する機能です。基盤モデルは学習時のデータしか知りませんが、RAGを使うことで社内の最新ドキュメントやデータベースの情報をもとに回答精度を上げることができます。一方、Guardrails（ガードレール）は基盤モデルの応答をフィルタリングして不適切な内容や有害なコンテンツが出力されないようにする安全機能です。KnowledgeBasesとGuardrailsはBedrockの重要な機能として混同しないよう注意しましょう。翻訳モデルの管理はTranslateの領域、学習履歴の記録はSageMaker AIの機能です。"
+    },
+    {
+      "id": "ch13-016",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "動画ストリーミングサービスで、S3にアップロードされた動画ファイルを自動的にチェックして不適切なシーンを検出する仕組みを、機械学習の専門知識なしに構築したいと考えています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon Rekognition",
+        "B": "Amazon Bedrock",
+        "C": "Amazon SageMaker AI",
+        "D": "Amazon Textract"
+      },
+      "answer": "A",
+      "explanation": "Amazon Rekognition は、画像や動画の分析をAPIで提供するマネージドサービスです。不適切コンテンツ（暴力的・性的な内容）の検出は動画に対しても行えます。機械学習の知識がなくてもAPIを呼び出すだけで利用できるAIサービス層のサービスです。また、AWS Lambda と組み合わせることで「S3に動画がアップロードされたら自動的にLambdaが起動してRekognitionを呼び出す」という仕組みを構築できます。Amazon SageMaker AIは独自MLモデルを構築するプラットフォームで、ML専門知識が必要です。Amazon Bedrockは生成AI基盤モデルのAPIプラットフォームです。Amazon Textractは文書からテキストを抽出するサービスで、動画の不適切コンテンツ検出には適しません。"
+    },
+    {
+      "id": "ch13-017",
+      "type": "multi",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "AWSのAI/MLサービスの中で、「AIサービス層」に分類されるサービスを2つ選んでください。",
+      "choices": {
+        "A": "Amazon SageMaker AI",
+        "B": "Amazon Rekognition",
+        "C": "Amazon Bedrock",
+        "D": "Amazon Comprehend",
+        "E": "Amazon EMR"
+      },
+      "answer": ["B", "D"],
+      "explanation": "AIサービス層は、機械学習の専門知識がなくてもAPIを呼び出すだけで利用できるサービス群です。Amazon Rekognition（画像・動画分析）とAmazon Comprehend（テキストの自然言語処理）はいずれもAIサービス層に分類されます。他にPolly、Transcribe、Lex、Translate、Textract、Kendraなども同じ層です。Amazon SageMaker AIは、独自のMLモデルを構築・学習・デプロイするMLプラットフォーム層であり、機械学習の専門知識が必要です。Amazon BedrockはAIサービス層でもMLプラットフォーム層でもなく、生成AI基盤モデルをAPIで提供するプラットフォームです。Amazon EMR（Elastic MapReduce）はビッグデータ処理フレームワークであり、AI/ML専用サービスではありません。"
+    },
+    {
+      "id": "ch13-018",
+      "type": "multi",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon Bedrock が提供する主要機能を2つ選んでください。",
+      "choices": {
+        "A": "Guardrails（不適切な応答をフィルタリングする安全機能）",
+        "B": "チャットボットの会話フローを設計する機能",
+        "C": "Knowledge Bases（社内データを活用してRAGを実現する機能）",
+        "D": "音声認識による文字起こし機能",
+        "E": "画像内の顔を検出する機能"
+      },
+      "answer": ["A", "C"],
+      "explanation": "Amazon Bedrockの主要機能として、Guardrails（ガードレール）とKnowledge Bases（ナレッジベース）があります。Guardrailsは基盤モデルの応答をフィルタリングして不適切な内容や有害なコンテンツが出力されないようにする安全機能です。Knowledge BasesはRAG（Retrieval-Augmented Generation、検索拡張生成）を実現する機能で、社内のドキュメントやデータベースの情報をもとに基盤モデルの回答精度を上げます。チャットボットの会話フロー設計はAmazon Lexの機能です。音声認識による文字起こしはAmazon Transcribeの機能です。画像内の顔検出はAmazon Rekognitionの機能です。"
+    },
+    {
+      "id": "ch13-019",
+      "type": "multi",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "機械学習の専門知識を持たないチームでも利用できるAWSのAIサービスを2つ選んでください。",
+      "choices": {
+        "A": "Amazon SageMaker AI（独自モデルのトレーニング）",
+        "B": "Amazon Polly（テキストを音声に変換）",
+        "C": "Amazon SageMaker AI（ゼロからのモデル構築）",
+        "D": "Amazon Translate（テキスト翻訳）",
+        "E": "Amazon SageMaker AI（カスタムアルゴリズムの実装）"
+      },
+      "answer": ["B", "D"],
+      "explanation": "Amazon PollyとAmazon TranslateはAIサービス層のサービスであり、機械学習の専門知識がなくてもAPIを呼び出すだけで利用できます。Pollyはテキストを自然な音声に変換するTTS（Text-to-Speech）サービス、Translateはテキストを多数の言語間で翻訳するサービスです。選択肢A・C・Eはいずれも Amazon SageMaker AI に関する記述で、独自モデルのトレーニング、ゼロからのモデル構築、カスタムアルゴリズムの実装はすべてMLプラットフォーム層の機能であり、機械学習の専門知識が必要です。MLの専門知識が不要なAIサービス層（Rekognition、Comprehend、Polly、Transcribe、Lex、Translateなど）と、専門知識が必要なMLプラットフォーム層（SageMaker AI）の区別を明確にしましょう。"
+    },
+    {
+      "id": "ch13-020",
+      "type": "single",
+      "domain": "第3分野: クラウドテクノロジーとサービス",
+      "text": "Amazon Bedrock のファインチューニングについての説明として最も正しいものはどれですか？",
+      "choices": {
+        "A": "ゼロから新しい基盤モデルを構築する作業",
+        "B": "基盤モデルの応答速度を向上させるためのインフラ最適化",
+        "C": "汎用的に学習済みの基盤モデルに自社データを追加で学習させて精度を上げる作業",
+        "D": "社内ドキュメントをリアルタイムで検索して回答を生成する機能"
+      },
+      "answer": "C",
+      "explanation": "ファインチューニングとは、汎用的に学習済みの基盤モデルに自社のデータを追加で学ばせて精度を上げる作業のことです。たとえば、一般的な料理の知識を持つシェフ（汎用モデル）に自社レストランのメニューを覚えてもらう（自社データで追加学習）ようなイメージです。この際、自社のデータがモデルプロバイダーに共有されることはなく、セキュリティ面でも安心して使えます。ゼロから新しい基盤モデルを構築するのは極めてコストのかかる作業であり、Bedrockのファインチューニングとは別の概念です。インフラ最適化はBedrockのファインチューニングの説明ではありません。社内ドキュメントをリアルタイムで検索して回答を生成するのはKnowledge Bases（RAG）の機能です。"
+    }
+  ]
+}

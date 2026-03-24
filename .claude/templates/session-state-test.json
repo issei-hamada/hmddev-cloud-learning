@@ -1,0 +1,17 @@
+{
+  "type": "<mpl1|mpl2|mpl3|fpl|quick_test>",
+  "last_updated": "<ISO8601>",
+  "scope": "<範囲>",
+  "total": 0,
+  "correct": 0,
+  "score_rate": 0.0,
+  "domain_scores": {
+    "domain1": 0.0,
+    "domain2": 0.0,
+    "domain3": 0.0,
+    "domain4": 0.0
+  },
+  "weak_sections": ["<トピック名>"],
+  "session_file": "sessions/<ファイル名>",
+  "report_file": "reports/<ファイル名>"
+}

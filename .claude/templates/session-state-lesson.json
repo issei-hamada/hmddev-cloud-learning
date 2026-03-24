@@ -1,0 +1,8 @@
+{
+  "type": "lesson",
+  "chapter": "<章ID>",
+  "last_updated": "<ISO8601>",
+  "current_section_index": 0,
+  "section_scores": {},
+  "interrupted": false
+}

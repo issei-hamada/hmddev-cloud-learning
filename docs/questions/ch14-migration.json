@@ -1,0 +1,290 @@
+{
+  "chapter": "ch14",
+  "title": "移行・モダナイゼーション",
+  "questions": [
+    {
+      "id": "ch14-001",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "オンプレミスで動作しているWebアプリケーションを、アプリケーションのコードをほぼ変更せず、できるだけ短期間でAWSに移行したいと考えています。この戦略として最も適切なものはどれですか？",
+      "choices": {
+        "A": "Refactor",
+        "B": "Repurchase",
+        "C": "Rehost",
+        "D": "Retire"
+      },
+      "answer": "C",
+      "explanation": "Rehost（リフト&シフト）は、既存のシステムをほぼそのままの構成でAWSに移行する戦略です。アプリケーションのコード変更が最小限で済むため、移行スピードが最も速い方法です。「まずクラウドに移行し、最適化は後から」というスピード重視のシナリオで選ばれます。Refactorはアプリケーションの設計から作り直す方法で工数が最大です。Repurchaseは既存システムを廃止して別のSaaSに乗り換える方法です。RetireはシステムをAWSに移行せず廃止する選択肢です。"
+    },
+    {
+      "id": "ch14-002",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "AWS Cloud Adoption Framework（CAF）において、クラウド移行のために社員のスキルアップ研修計画を策定したり、組織体制の変革を管理したりする活動は、どの観点に該当しますか？",
+      "choices": {
+        "A": "ガバナンス観点",
+        "B": "ビジネス観点",
+        "C": "オペレーション観点",
+        "D": "ピープル観点"
+      },
+      "answer": "D",
+      "explanation": "AWS CAFのピープル観点は、クラウドを活用するための人材育成・組織体制の整備・変革管理を扱います。社員のスキルアップ研修や組織の変革はこの観点に該当します。ビジネス観点はクラウド投資がビジネス成果につながることを確保する視点です。ガバナンス観点はリスク管理やコンプライアンス・コスト管理ルールの策定を扱います。オペレーション観点は日々のクラウド環境の運用・監視方法の設計を扱います。CAFの観点は「この課題はどの観点か」とシナリオで判断できるようにしておくことが大切です。"
+    },
+    {
+      "id": "ch14-003",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "ある企業は、オンプレミスのデータベースをAmazon RDSに置き換えたいと考えています。アプリケーションのコアコードはほぼ変更しませんが、インフラの一部をマネージドサービスに切り替えます。この移行戦略として最も適切なものはどれですか？",
+      "choices": {
+        "A": "Refactor",
+        "B": "Rehost",
+        "C": "Retain",
+        "D": "Replatform"
+      },
+      "answer": "D",
+      "explanation": "Replatform（リフト・ティンカー&シフト）は、アプリケーションのコアコードはほぼ変えずに、インフラの一部をAWSのマネージドサービスに置き換える戦略です。自前のデータベースをAmazon RDSに置き換えるケースが代表例です。移行スピードと最適化のバランスが良い選択肢で「少しの手間で運用負担を減らしたい」ときに選ばれます。Rehostはインフラもアプリもほぼそのままの移行で最適化の度合いは最低です。Refactorはアプリケーション設計から作り直すため工数・コストが最大です。Retainはシステムをクラウドではなくオンプレミスにそのまま残す選択肢です。"
+    },
+    {
+      "id": "ch14-004",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "移行プロジェクトの棚卸しの結果、実際にはほぼ誰も使っていない社内システムが複数発見されました。これらのシステムに対して最も適切な7つのRの戦略はどれですか？",
+      "choices": {
+        "A": "Refactor",
+        "B": "Relocate",
+        "C": "Repurchase",
+        "D": "Retire"
+      },
+      "answer": "D",
+      "explanation": "Retire（リタイア）は、移行対象の中で「もう使わないシステム」「別のシステムと機能が重複しているシステム」を廃止する選択肢です。移行前の棚卸しでこうしたシステムを発見し廃止することで、移行コストと手間を削減できます。Refactorはクラウドネイティブな技術を使って作り直す戦略です。Relocateは仮想化基盤ごとAWSに移す戦略です。Repurchaseは既存システムを捨てて別のSaaSに乗り換える戦略です。使われていないシステムに対して改修・移行コストをかけるのは非効率であり、Retireが最適な判断です。"
+    },
+    {
+      "id": "ch14-005",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "オンプレミスで動作しているモノリシックなアプリケーションを、AWS Lambda・Amazon API Gateway・Amazon DynamoDBを使ったサーバーレスのマイクロサービス構成に再設計して移行することにしました。この移行戦略として最も適切なものはどれですか？",
+      "choices": {
+        "A": "Refactor",
+        "B": "Rehost",
+        "C": "Replatform",
+        "D": "Repurchase"
+      },
+      "answer": "A",
+      "explanation": "Refactor（リファクタ / リアーキテクト）は、アプリケーションの設計そのものを見直し、クラウドネイティブな技術を使って作り直す戦略です。モノリシックなアプリケーションをマイクロサービス化・サーバーレス化するケースが典型例です。工数とコストは最大ですが、クラウドのメリットを最大限に活かせ、長期的なスケーラビリティや運用コストの削減につながります。Rehostはほぼそのままの移行、Replatformはインフラの一部を最適化する移行であり、いずれも設計の作り直しは行いません。Repurchaseは別のSaaS製品への乗り換えです。"
+    },
+    {
+      "id": "ch14-006",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "AWS Migration Hubの主な役割として最も正しいものはどれですか？",
+      "choices": {
+        "A": "オンプレミス環境のサーバー情報（スペック・ソフトウェア構成など）を自動収集する",
+        "B": "オンプレミスとAWSの間を専用回線で接続する",
+        "C": "サーバーのデータをAWSに継続的にレプリケーションして移行を自動化する",
+        "D": "複数の移行ツールを使った移行プロジェクト全体の進捗を一元的に管理する"
+      },
+      "answer": "D",
+      "explanation": "AWS Migration Hubは、移行プロジェクト全体の進捗をダッシュボードで一元管理するサービスです。自分でサーバーを移行するのではなく、Application Migration Service（MGN）など他の移行ツールと連携して、その進捗状況を一つの画面でまとめて確認できる「司令塔」の役割を果たします。オンプレミス環境の棚卸し（サーバー情報の自動収集）はAWS Application Discovery Serviceの役割です。専用回線接続はAWS Direct Connectです。サーバーデータのレプリケーションと移行自動化はAWS Application Migration Service（MGN）の役割です。"
+    },
+    {
+      "id": "ch14-007",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "オンプレミスにある大量のサーバーをAWSに移行する際、移行の計画を立てる前にまず「現在の環境に何が動いているか」を把握したいと考えています。この目的に最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "AWS Application Discovery Service",
+        "B": "AWS Application Migration Service",
+        "C": "AWS Migration Evaluator",
+        "D": "AWS Migration Hub"
+      },
+      "answer": "A",
+      "explanation": "AWS Application Discovery Serviceは、オンプレミス環境のサーバーやアプリケーションの情報（CPU・メモリ・ソフトウェア構成・ネットワーク通信パターンなど）を自動的に収集するサービスです。移行計画を立てる前の「棚卸し」フェーズで使われます。AWS Application Migration Service（MGN）は実際のサーバー移行を自動化するサービスです。Migration Evaluatorはオンプレミスとクラウドのコスト比較レポートを作成するサービスです。Migration Hubは移行プロジェクト全体の進捗を一元管理するダッシュボードです。まず「何がある」を把握することが移行の第一歩です。"
+    },
+    {
+      "id": "ch14-008",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "AWS Application Migration Service（MGN）が主に採用される移行戦略として最も適切なものはどれですか？",
+      "choices": {
+        "A": "Refactor",
+        "B": "Rehost",
+        "C": "Repurchase",
+        "D": "Retire"
+      },
+      "answer": "B",
+      "explanation": "AWS Application Migration Service（MGN）は、オンプレミスのサーバーにエージェントをインストールし、サーバーのデータをAWSに継続的にレプリケーション（複製）して移行を自動化するサービスです。サーバーの中身をそっくりそのままAWSに移す「リフト&シフト」、すなわちRehost戦略を実行するときに主に使われます。Refactorはアプリケーションを設計から作り直す戦略であり、MGNのような移行自動化ツールを使う場面ではありません。Repurchaseは別のSaaSに乗り換える戦略、Retireはシステムを廃止する選択肢です。"
+    },
+    {
+      "id": "ch14-009",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "数百TBのデータをオンプレミスのデータセンターからAWSに移行する必要があります。ネットワーク転送では数週間かかると見積もられています。最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "AWS DataSync",
+        "B": "AWS Direct Connect",
+        "C": "AWS Snowball Edge",
+        "D": "AWS Snowcone"
+      },
+      "answer": "C",
+      "explanation": "AWS Snowball Edgeは、数十TB〜数百TBのデータを物理デバイスでAWSに転送するSnow Familyのサービスです。ネットワーク転送では現実的な時間内に完了しないほど大量のデータを、物理的なデバイスにコピーしてAWSに返送する「データの引っ越しトラック」です。Snowconeは最大14TBの小型デバイスで、今回のデータ量には対応できません。AWS Direct Connectは専用回線接続サービスですが、数百TBのネットワーク転送には依然として長時間かかります。AWS DataSyncはネットワーク経由のデータ転送を効率化するサービスですが、大量データの物理転送には適しません。"
+    },
+    {
+      "id": "ch14-010",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "Snow Familyの中で最も小型・軽量のデバイスで、ネットワーク環境が限られた遠隔地や工場でのデータ収集に適したサービスはどれですか？",
+      "choices": {
+        "A": "AWS Snowball Edge",
+        "B": "AWS Snowcone",
+        "C": "AWS Snowmobile",
+        "D": "AWS Storage Gateway"
+      },
+      "answer": "B",
+      "explanation": "AWS Snowconeは、Snow Familyの中で最も小さなデバイスで、重さ約2.1kgと片手で持てるサイズです。8TBまたは14TB（SSD）のストレージ容量を持ち、オフィス・工場・遠隔地など、ネットワーク環境が限られた場所でのデータ収集に向いています。AWS Snowball Edgeは数十〜数百TBの大規模データ転送に適したスーツケースサイズのデバイスです。AWS Snowmobileは最大100PBのデータを転送できるコンテナ型トラックです。AWS Storage Gatewayはオンプレミスとクラウドの日常的なデータ連携に使われるサービスで、Snow Familyとは異なります。"
+    },
+    {
+      "id": "ch14-011",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "AWS Snowball Edgeには、ストレージとしてデータを転送する機能に加えて、もう一つの重要な機能があります。その機能として最も正しいものはどれですか？",
+      "choices": {
+        "A": "インターネット経由での暗号化データ転送",
+        "B": "オンプレミスとAWSの間の専用回線接続",
+        "C": "デバイス上でのデータ前処理・コンピューティング（エッジコンピューティング）",
+        "D": "データベースのスキーマ変換"
+      },
+      "answer": "C",
+      "explanation": "AWS Snowball Edgeは、単純なストレージデバイスではなく、デバイス上でデータの前処理（加工・分析）を実行するエッジコンピューティング機能を備えています。船上や工場内などネットワーク接続が不安定な環境で、IoTデータの前処理や機械学習（ML）推論を実行するといった使い方ができます。インターネット経由の暗号化データ転送はAWS Site-to-Site VPNの機能です。専用回線接続はAWS Direct Connectの機能です。データベースのスキーマ変換はAWS SCT（Schema Conversion Tool）の機能です。Snow Familyを問う試験では「Snowball EdgeはエッジコンピューティングもできるSnowデバイス」という点が頻出です。"
+    },
+    {
+      "id": "ch14-012",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "OracleデータベースをAmazon Auroraに移行するような、異なる種類のデータベース間の移行（異種間移行）を行う場合、データ移行の前に実行すべき手順として最も適切なものはどれですか？",
+      "choices": {
+        "A": "AWS Application Discovery Serviceで移行元DBの情報を収集する",
+        "B": "AWS DMSだけで移行を完結させる",
+        "C": "AWS SCTでスキーマ（データベース構造）を変換してからAWS DMSでデータを移行する",
+        "D": "AWS Snowball Edgeで物理デバイスによるデータ転送を行う"
+      },
+      "answer": "C",
+      "explanation": "異種間移行（ヘテロジニアス移行）では、データベースの種類が異なるため、SQLの方言や構造（スキーマ）を変換する必要があります。AWS SCT（Schema Conversion Tool）を使ってスキーマを変換した後、AWS DMS（Database Migration Service）を使ってデータを移行します。同種間移行（例: MySQL → RDS for MySQL）であればDMSのみで移行できますが、異種間移行にはSCT + DMSの組み合わせが必要です。Application Discovery Serviceは移行対象サーバーの棚卸しに使うサービスで、DB移行の手順には直接関係しません。Snowball Edgeは大容量データの物理転送向けであり、DB移行の標準手順ではありません。"
+    },
+    {
+      "id": "ch14-013",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "ある企業が移行プロジェクトを開始する前に、「現在のオンプレミス環境のコストと、AWSに移行した場合のコストを比較したビジネスケースレポートを作成したい」と考えています。この目的に最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "AWS Application Discovery Service",
+        "B": "AWS Migration Evaluator",
+        "C": "AWS Migration Hub",
+        "D": "AWS Pricing Calculator"
+      },
+      "answer": "B",
+      "explanation": "AWS Migration Evaluatorは、現在のオンプレミス環境のコスト（サーバー購入費・電気代・人件費など）を分析し、AWSに移行した場合のコストと比較するレポートを作成するサービスです。移行プロジェクト開始前の「ビジネスケース作り」に役立ちます。Application Discovery Serviceはオンプレミス環境のサーバー情報を自動収集する棚卸しサービスです。Migration Hubは移行プロジェクトの進捗を一元管理するダッシュボードです。AWS Pricing Calculatorは任意の構成のAWSサービスのコストを見積もるツールですが、オンプレミスとの比較レポート作成には特化していません。"
+    },
+    {
+      "id": "ch14-014",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "AWS Cloud Adoption Framework（CAF）において、クラウド利用のルール作りやリスク管理、コスト管理方針を策定する活動はどの観点に該当しますか？",
+      "choices": {
+        "A": "ガバナンス観点",
+        "B": "セキュリティ観点",
+        "C": "ビジネス観点",
+        "D": "プラットフォーム観点"
+      },
+      "answer": "A",
+      "explanation": "AWS CAFのガバナンス観点は、クラウド利用に関するリスク管理・コンプライアンス（法令遵守）・コスト管理ルールの策定を扱います。「クラウドをどのように使うかのルール作り」がこの観点に該当します。セキュリティ観点はデータ保護やアクセス制御の設計を扱います。ビジネス観点はクラウド投資がビジネス成果につながることを確保する視点です。プラットフォーム観点はネットワーク構成・アカウント設計・運用自動化など技術基盤の設計を扱います。CAFは6つの観点（ビジネス・ピープル・ガバナンス・プラットフォーム・セキュリティ・オペレーション）を押さえておきましょう。"
+    },
+    {
+      "id": "ch14-015",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "クラウド移行期間中、一部のシステムがまだオンプレミスに残っており、一部はすでにAWSで動いているハイブリッド状態が続いています。オンプレミスとAWSの間を安定した専用の物理回線で接続したい場合、最も適切なAWSサービスはどれですか？",
+      "choices": {
+        "A": "Amazon CloudFront",
+        "B": "AWS Direct Connect",
+        "C": "AWS Site-to-Site VPN",
+        "D": "AWS Transit Gateway"
+      },
+      "answer": "B",
+      "explanation": "AWS Direct Connectは、オンプレミスのデータセンターとAWSの間を専用の物理回線で接続するサービスです。インターネットを経由しないため通信が安定しており、大量のデータをやり取りする移行期間中に特に有効です。AWS Site-to-Site VPNはインターネット経由で暗号化されたトンネルを作る方法で、導入は簡単ですがDirect Connectほどの安定性はありません。Amazon CloudFrontはコンテンツ配信ネットワーク（CDN）です。AWS Transit Gatewayは複数のVPCやオンプレミスネットワークを一元接続するハブサービスです。移行中の「安定した専用回線」というキーワードはDirect Connectを選ぶ指標です。"
+    },
+    {
+      "id": "ch14-016",
+      "type": "single",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "AWS Cloud Adoption Framework（CAF）が定義する移行プロセスの4つのフェーズを、正しい順序で並べたものはどれですか？",
+      "choices": {
+        "A": "Envision → Align → Launch → Scale",
+        "B": "Align → Envision → Launch → Scale",
+        "C": "Envision → Launch → Align → Scale",
+        "D": "Launch → Envision → Align → Scale"
+      },
+      "answer": "A",
+      "explanation": "AWS CAFが定義する移行プロセスの4フェーズは、Envision（ビジョン策定：なぜクラウドに移行するのか目指す姿を描く）→ Align（体制整備：必要なスキルや組織体制を整える）→ Launch（パイロット実行：小規模な移行を実施して成功体験を積む）→ Scale（全社展開：パイロットの成果をもとに残りのシステムを順次移行する）の順です。「まず目指す姿を描き、体制を整え、小さく試して、全体に広げる」という流れを覚えましょう。試験では「CAFのフェーズの順序」として問われることがあります。"
+    },
+    {
+      "id": "ch14-017",
+      "type": "multi",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "7つのR（移行戦略）のうち、既存のアプリケーションコードをほとんど変更せずに移行できる戦略を2つ選んでください。",
+      "choices": {
+        "A": "Refactor",
+        "B": "Rehost",
+        "C": "Replatform",
+        "D": "Repurchase",
+        "E": "Retire"
+      },
+      "answer": ["B", "C"],
+      "explanation": "Rehost（リフト&シフト）は既存のシステムをほぼそのままの構成でAWSに移行する戦略で、アプリケーションのコード変更は最小限です。Replatform（リフト・ティンカー&シフト）はアプリケーションのコアコードはほぼ変えず、インフラの一部（データベースをRDSに置き換えるなど）をマネージドサービスに切り替える戦略です。どちらもアプリケーションコードの大規模変更を伴いません。Refactorはアプリケーションの設計から作り直すため、コードの大幅な変更が必要です。Repurchaseは別のSaaSに乗り換えるため、既存コードは捨てることになります。Retireはシステムを廃止する選択肢で、移行戦略ではありません。"
+    },
+    {
+      "id": "ch14-018",
+      "type": "multi",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "AWS Snow Familyに含まれるサービスを2つ選んでください。",
+      "choices": {
+        "A": "AWS DataSync",
+        "B": "AWS Snowball Edge",
+        "C": "AWS Snowcone",
+        "D": "AWS Storage Gateway",
+        "E": "AWS Transfer Family"
+      },
+      "answer": ["B", "C"],
+      "explanation": "AWS Snow Familyは、ネットワーク転送では時間がかかりすぎる大容量データを物理デバイスでAWSに転送するサービス群です。Snowcone（最大14TB、小型・軽量）、Snowball Edge（数十〜数百TB、エッジコンピューティング機能付き）、Snowmobile（最大100PB、トラック型）の3種類があります。AWS DataSyncはネットワーク経由のデータ転送を自動化・効率化するサービスで、Snow Familyとは異なります。AWS Storage Gatewayはオンプレミスとクラウドの日常的なデータ連携に使うサービスです。AWS Transfer Familyは、SFTP・FTPSなどのプロトコルを使ってAmazon S3にファイルを転送するサービスです。"
+    },
+    {
+      "id": "ch14-019",
+      "type": "multi",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "AWS Cloud Adoption Framework（CAF）の6つの観点のうち、正しいものを2つ選んでください。",
+      "choices": {
+        "A": "アーキテクチャ観点",
+        "B": "ガバナンス観点",
+        "C": "コスト観点",
+        "D": "ピープル観点",
+        "E": "リスク観点"
+      },
+      "answer": ["B", "D"],
+      "explanation": "AWS CAFの6つの観点は、ビジネス・ピープル・ガバナンス・プラットフォーム・セキュリティ・オペレーションの6つです。ガバナンス観点はリスク管理・コンプライアンス・コスト管理ルールを扱います。ピープル観点は人材育成・組織体制の整備・変革管理を扱います。「アーキテクチャ観点」「コスト観点」「リスク観点」という名称の観点はCAFには存在しません。コスト管理はガバナンス観点の中に含まれます。技術基盤の設計はプラットフォーム観点の中で扱われます。試験では6つの観点名と、各観点が何を扱うかを正確に覚えておくことが重要です。"
+    },
+    {
+      "id": "ch14-020",
+      "type": "multi",
+      "domain": "第1分野: クラウドのコンセプト",
+      "text": "オンプレミスからAWSへの移行プロジェクトにおいて、移行の「実行フェーズ」に使われるサービスを2つ選んでください。",
+      "choices": {
+        "A": "AWS Application Discovery Service",
+        "B": "AWS Application Migration Service（MGN）",
+        "C": "AWS Database Migration Service（DMS）",
+        "D": "AWS Migration Evaluator",
+        "E": "AWS Migration Hub"
+      },
+      "answer": ["B", "C"],
+      "explanation": "移行の実行フェーズでは、実際にデータやシステムをAWSに移す作業を行います。AWS Application Migration Service（MGN）は、オンプレミスのサーバーにエージェントをインストールし、データのレプリケーションと自動移行を実行するサービスです。AWS Database Migration Service（DMS）は、データベースのデータを移行中も稼働させながらAWSに移行するサービスです。Application Discovery Serviceは移行前の「棚卸しフェーズ」（現状把握）に使うサービスです。Migration Evaluatorは移行前の「計画フェーズ」（コスト比較）に使うサービスです。Migration Hubは進捗管理のダッシュボードであり、実際の移行を実行するサービスではありません。"
+    }
+  ]
+}
