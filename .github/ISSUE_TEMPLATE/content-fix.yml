@@ -1,0 +1,56 @@
+name: コンテンツ修正リクエスト
+description: 学習ドキュメントや問題バンクの誤り・改善点を報告する
+title: "[コンテンツ修正] "
+labels: ["content"]
+body:
+  - type: dropdown
+    id: target
+    attributes:
+      label: 対象
+      description: 修正対象の種別を選択してください
+      options:
+        - 学習ドキュメント（docs/chapters/）
+        - 問題バンク（docs/questions/）
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: 場所
+      description: 対象のファイル名またはセクション名
+      placeholder: "例: ch03-storage.md「S3 のストレージクラス」セクション"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: 修正の種類
+      options:
+        - 誤記・誤情報
+        - 説明が不正確・わかりにくい
+        - 情報の不足
+        - その他
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: 現在の内容（問題箇所）
+      description: 誤りや改善が必要な箇所を引用・説明してください
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 修正後の内容（提案）
+      description: 正しい内容や改善案を記載してください（わからなければ省略可）
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: 根拠・補足
+      description: AWS 公式ドキュメントのリンクや補足情報があれば記載してください
