@@ -139,7 +139,7 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # Generated exam files
-exams/*.md
+exams/*.html
 
 # User learning records and reports (personal data)
 records/
