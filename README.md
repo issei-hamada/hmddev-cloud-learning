@@ -2,147 +2,128 @@
 
 AWS Cloud Practitioner (CLF-C02) の学習ドキュメント・問題バンク・対話型学習システムのリポジトリです。
 
-> ※ 注意事項: 本コンテンツは AWS の公式試験問題を参照している訳ではありません。あくまで学習のサポートとして利用して下さい。
+> ※ 本コンテンツは AWS の公式試験問題を参照していません。学習サポートとしてご利用ください。
 
 ---
 
-## 対話型学習システム（teacher エージェント）
+## クイックスタート
 
-Claude Code の `--agent teacher` オプションで起動する対話型学習エージェントです。
+### Claude Code
 
 ```bash
+# teacher エージェントを起動
 claude --agent teacher
 ```
 
-### できること
+起動後、「授業を始めて」と話しかけると学習がスタートします。
 
-| 機能 | 説明 |
-|------|------|
-| **対話型授業** | 章ごとにセクション単位で授業。確認質問・フィードバックつき |
-| **Quick Test** | 最大5問の即席テスト（任意のタイミングで実施） |
-| **MPL（中間テスト）** | グループ終了後に10問（MPL-1〜3） |
-| **FPL（最終テスト）** | ch16 修了後に30問・本番試験配分 |
-| **スコアレポート** | MPL・FPL 完了後に `reports/` へ自動生成 |
-| **推奨学習プラン** | FPL 結果を元に苦手章を優先した復習プランを生成 |
-
-### 学習フロー
-
-```
-フェーズ1: 初期学習
-  （IT初心者の場合: appA → ）ch00 → ch01 → ... → ch16
-  各グループ終了後に MPL を提案
-  ch16 終了後に FPL を実施 → 推奨学習プラン生成
-
-フェーズ2: プランに沿った復習
-  learning_plan.json に従って苦手章を重点復習
-  → 再び FPL でスコア確認
-```
-
-### 章グループと MPL タイミング
-
-| グループ | 対象章 | MPL |
-|---------|--------|-----|
-| Group A | ch00〜ch04 | ch04 終了後 → MPL-1 |
-| Group B | ch05〜ch08 | ch08 終了後 → MPL-2 |
-| Group C | ch09〜ch12 | ch12 終了後 → MPL-3 |
-| Group D | ch13〜ch16 | ch16 終了後 → FPL |
-
-### `/start-lesson` スキル
-
-`--agent teacher` 起動中に入力すると、進捗状況に応じた次の授業を開始します。
+授業を再開・次の章へ進むときはスキルを呼び出します。
 
 ```
 /start-lesson
 ```
 
-### 生成されるファイル（gitignore 対象）
+### Kiro IDE
 
-```
-records/
-├── progress.json           # 全体の進捗（章ごとの完了状態・理解度）
-├── learning_plan.json      # FPL 後に生成される推奨学習プラン
-├── .session_state.json     # セッション中の一時状態（hooks が参照）
-└── sessions/               # 授業・テストのセッション記録（Markdown）
+エージェントパネルから **teacher** を選択して起動します。
 
-reports/
-├── index.md                # MPL・FPL スコア一覧
-└── YYYYMMDD_HHmmss_*.md    # 個別スコアレポート
-```
+起動後の操作は Claude Code と同じです（「授業を始めて」、`/start-lesson`）。
 
----
-
-## ディレクトリ構成
-
-```
-hmddev-cloud-learning/
-├── docs/
-│   ├── chapters/               # 章ごとの学習ドキュメント
-│   │   ├── ch00-introduction.md
-│   │   └── ...（ch00〜ch16, appA〜appC）
-│   └── questions/              # 問題バンク
-│       ├── domains.json        # ドメイン定義・配点・章マッピング
-│       ├── ch00-introduction.json
-│       └── ...                 # 章ごとの JSON ファイル
-├── tools/
-│   └── generate_exam.py        # 模擬試験生成ツール（CLI）
-├── exams/                      # 生成された模擬試験（gitignore 対象）
-├── records/                    # 学習記録（gitignore 対象）
-├── reports/                    # スコアレポート（gitignore 対象）
-└── .claude/
-    ├── agents/
-    │   └── teacher.md          # teacher エージェント定義
-    ├── skills/
-    │   └── start-lesson.md     # /start-lesson スキル
-    ├── hooks/
-    │   ├── save_progress.sh    # Stop/SessionEnd フック（進捗自動保存）
-    │   └── merge_progress.py   # session_state → progress.json マージ処理
-    └── templates/              # フォーマットテンプレート（エージェントが参照）
-```
-
----
-
-## 模擬試験の生成（CLI ツール）
-
-`generate_exam.py` で問題バンクから試験ファイルを生成できます。
+### Kiro CLI
 
 ```bash
-# 全単元から20問（デフォルト）
+# teacher エージェントを起動
+kiro --agent teacher
+```
+
+起動後の操作は Claude Code と同じです。
+
+---
+
+## 学習の進め方
+
+### フェーズ 1 — 初期学習
+
+```
+（IT初心者の場合）appA → ch00 → ch01 → ... → ch16
+```
+
+各グループが終わると中間テスト（MPL）を提案します。ch16 修了後に最終テスト（FPL）を実施し、推奨学習プランが生成されます。
+
+| グループ | 対象章 | テスト |
+|---------|--------|--------|
+| Group A | ch00〜ch04 | ch04 修了後 → MPL-1（10問） |
+| Group B | ch05〜ch08 | ch08 修了後 → MPL-2（10問） |
+| Group C | ch09〜ch12 | ch12 修了後 → MPL-3（10問） |
+| Group D | ch13〜ch16 | ch16 修了後 → FPL（30問） |
+
+### フェーズ 2 — 推奨プランによる復習
+
+FPL 結果をもとに苦手章を優先した復習プランが `records/learning_plan.json` に保存されます。`/start-lesson` で自動的にフェーズ 2 の授業が始まります。
+
+### 授業中にできること
+
+| 操作 | 説明 |
+|------|------|
+| `/start-lesson` | 進捗に応じた次の授業を開始・再開 |
+| 「テストして」 | その場で Quick Test（5問）を実施 |
+| 「〇〇について教えて」 | 任意の AWS サービスを質問 |
+| 「MPL やって」 | グループ中間テストを実施 |
+| 「FPL やって」 | 最終テストを実施 |
+
+---
+
+## 模擬試験の生成
+
+問題バンクから HTML 形式の模擬試験ファイルを生成します。ブラウザで開くだけで使えます。
+
+```bash
+# 全単元から 20 問（デフォルト）
 python tools/generate_exam.py
 
 # 問題数を指定
 python tools/generate_exam.py --count 30
 
-# 特定の単元のみ出題
+# 特定の単元のみ
 python tools/generate_exam.py --chapters ch09,ch10
 
-# ドメインで絞り込み（domain1〜domain4）
+# ドメインで絞り込み
 python tools/generate_exam.py --domain domain2
 
-# 試験の配点比率（24:30:34:12）に合わせて自動配分
-python tools/generate_exam.py --count 50 --weighted
+# 試験の配点比率（24:30:34:12）で自動配分
+python tools/generate_exam.py --count 65 --weighted
 
-# シード指定（同じ出題内容を再現したいとき）
+# シード指定（同じ出題を再現したいとき）
 python tools/generate_exam.py --count 20 --seed 42
 ```
 
-生成されたファイルは `exams/exam_YYYYMMDD_HHmmss_Nq.md` に保存されます（gitignore 対象）。
+生成ファイルは `exams/exam_YYYYMMDD_HHmmss_Nq.html` に保存されます（gitignore 対象）。
+
+### 試験モード
+
+| モード | 説明 |
+|--------|------|
+| 練習モード | 1問ずつ回答し、すぐに正解・解説を確認 |
+| 本番モード | 全問回答後にまとめて採点・解説を表示 |
+
+受験記録はブラウザの LocalStorage に自動保存されます。
 
 ### オプション一覧
 
-`--chapters` / `--domain` / `--weighted` は同時指定不可（排他）です。
+`--chapters` / `--domain` / `--weighted` は排他です。
 
 | オプション | 省略形 | デフォルト | 説明 |
 |-----------|--------|-----------|------|
 | `--count` | `-n` | `20` | 出力する問題数 |
 | `--chapters` | `-c` | 全単元 | 対象単元（カンマ区切り） |
-| `--domain` | `-d` | | 対象ドメインID（`domain1`〜`domain4`） |
+| `--domain` | `-d` | | 対象ドメイン ID（`domain1`〜`domain4`） |
 | `--weighted` | `-w` | | 配点比率に合わせて全ドメインから自動配分 |
 | `--output` | `-o` | `exams/` | 出力先ディレクトリ |
 | `--seed` | | なし | 乱数シード（再現用） |
 
 ### ドメイン一覧
 
-| ドメインID | ドメイン名 | 配点 | 対応単元 |
+| ドメイン ID | ドメイン名 | 配点 | 対応単元 |
 |-----------|-----------|------|---------|
 | `domain1` | クラウドのコンセプト | 24% | ch00, ch07, ch14 |
 | `domain2` | セキュリティとコンプライアンス | 30% | ch09 |
@@ -151,31 +132,59 @@ python tools/generate_exam.py --count 20 --seed 42
 
 ---
 
+## ディレクトリ構成
+
+```
+hmddev-cloud-learning/
+├── docs/
+│   ├── chapters/               # 章ごとの学習ドキュメント（ch00〜ch16, appA〜appC）
+│   └── questions/              # 問題バンク（章ごとの JSON + domains.json）
+├── tools/
+│   └── generate_exam.py        # 模擬試験生成ツール
+├── exams/                      # 生成された模擬試験（gitignore 対象）
+├── records/                    # 学習記録・進捗（gitignore 対象）
+├── reports/                    # スコアレポート（gitignore 対象）
+├── .claude/                    # Claude Code 用設定
+│   ├── agents/                 # エージェント定義（teacher など）
+│   ├── skills/start-lesson/    # /start-lesson スキル
+│   └── hooks/                  # 進捗自動保存フック
+└── .kiro/                      # Kiro IDE / Kiro CLI 用設定
+    ├── agents/teacher.json     # teacher エージェント定義
+    ├── skills/start-lesson/    # /start-lesson スキル
+    ├── hooks/                  # 進捗自動保存フック
+    └── steering/               # 常時コンテキスト（プロジェクト概要・章マップ）
+```
+
+### 学習記録ファイル
+
+| ファイル | 説明 |
+|---------|------|
+| `records/progress.json` | 章ごとの完了状態・理解度スコア |
+| `records/learning_plan.json` | FPL 後に生成される推奨学習プラン |
+| `records/sessions/` | 授業・テストのセッション記録 |
+| `reports/index.md` | MPL・FPL スコア一覧 |
+
+---
+
 ## 問題の追加方法
 
 `docs/questions/<単元ID>-*.json` の `questions` 配列に追記します。
 
-**択一選択問題（`type: "single"`）**
+**択一選択（`type: "single"`）**
 
 ```json
 {
   "id": "ch01-001",
   "type": "single",
   "domain": "第3分野: クラウドテクノロジーとサービス",
-  "text": "問題文をここに書く",
-  "choices": {
-    "A": "選択肢A",
-    "B": "選択肢B",
-    "C": "選択肢C",
-    "D": "選択肢D"
-  },
+  "text": "問題文",
+  "choices": { "A": "...", "B": "...", "C": "...", "D": "..." },
   "answer": "B",
-  "explanation": "解説文をここに書く"
+  "explanation": "解説文"
 }
 ```
 
-**複数選択問題（`type: "multi"`）**
-5択から2つ選ぶ形式。`answer` を配列にし、`choices` に E を加えます。
+**複数選択（`type: "multi"`）** — 5択から2つ選ぶ形式
 
 ```json
 {
@@ -183,16 +192,8 @@ python tools/generate_exam.py --count 20 --seed 42
   "type": "multi",
   "domain": "第2分野: セキュリティとコンプライアンス",
   "text": "〜を2つ選んでください。",
-  "choices": {
-    "A": "選択肢A",
-    "B": "選択肢B",
-    "C": "選択肢C",
-    "D": "選択肢D",
-    "E": "選択肢E"
-  },
+  "choices": { "A": "...", "B": "...", "C": "...", "D": "...", "E": "..." },
   "answer": ["A", "C"],
-  "explanation": "解説文をここに書く"
+  "explanation": "解説文"
 }
 ```
-
-> `type` を省略した場合は `"single"` として扱われます。
